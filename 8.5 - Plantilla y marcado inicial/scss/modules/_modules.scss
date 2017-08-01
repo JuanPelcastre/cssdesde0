@@ -1,0 +1,45 @@
+.contact-widget {
+	display: flex;
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+		background-color: $secondary-color;
+		color: #fff;
+		text-align: center;
+		// line-height: 2.3rem;
+		font-size: 1.5rem;
+	}
+	&__data {
+		margin-left: .5rem;
+	}
+	&__title {
+		margin: 0;
+	}
+	&__content {
+		margin: 0;
+	}
+}
+
+.button {
+	text-decoration: none;
+	line-height: 2.7;
+	display: inline-block;
+	padding: 0 1rem;
+	
+	&--dark {
+		background: $secondary-color;
+		color: #fff;
+	}
+	&--light {
+		background: #fff;
+		color: $primary-color;
+	}
+	&--cta {
+		background-color: $primary-color;
+		color: #fff;
+	}
+	&--square {
+		padding: 0;
+		line-height: 2;
+	}
+}

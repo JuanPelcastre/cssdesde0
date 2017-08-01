@@ -1,0 +1,9 @@
+body { 
+  height: 100vh;
+  bg-image: linear-gradient(red, yellow);
+ó tambien acepta tres o mas
+  bg-image: linear-gradient(red, yellow, magenta, orange);
+  hasta el 50% es red puro y despues empieza la transition
+  bg-image: linear-gradient(red 50%, yellow);
+  el amarillo empieza en el 60%
+  bg-image: linear-gradient(red 50%, yellow 60%);

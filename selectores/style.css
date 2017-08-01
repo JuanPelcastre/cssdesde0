@@ -1,0 +1,31 @@
+*,
+*:before,
+*after {
+  box-sizing: border-box;
+}
+
+/*[href$="pdf"] {
+  display: block;
+  background: url("http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png") left / contain no-repeat;
+  padding-left: 1.5em; }
+
+[href*='sea'] { 
+  color: green; 
+}*/
+
+[href$="pdf"]::before {
+  content: url(http://epaper.theshillongtimes.com/images/pdf.png);
+}
+.download {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.download::before {
+  display: inline-block;
+  margin-right: .5em;
+}
+
+[href$="docs"]::before {
+  content: url(http://inuit.org/typo3conf/ext/file_list/Resources/Public/Icons/Files/docx.png);
+}

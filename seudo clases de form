@@ -1,0 +1,127 @@
+/* Pseudo clases de formularios */
+:focus para cuando un elemento ha sido enfocado con el cursor o con tab
+:enable
+:disabled
+:checked
+
+html
+form
+  input type=radio id=elegir class=elegir
+  label for=elegir Opcion elegida
+css  
+.elegir:checked + label {
+  font-size: 2em;
+  background: yellow;
+  color: red;  
+  
+/* :required y :optional */  
+html
+input
+input required
+
+css
+input:optional 
+  border: 1px solid green; 
+input:required 
+  border: 1px solid red   
+  
+/* :valid :invalid*/ 
+html
+<input type=email>
+input required
+
+css
+input:valid 
+  border: 1px solid green; 
+input:invalid 
+  border: 1px solid red   
+
+/* :in-range y :out-of-range */
+input type=number max=10
+
+input:in-range {
+  bg: yellow
+input:out-of-range {
+  bg:red
+  
+/* child */
+even pares
+odd impares
+:nth-child(odd | even | numero | ecuacion )
+3n ecuacion multiplos de 3 (donde n comienza en 0)   
+
+:nth-last-child identico pero cuenta de abajo hacia arriba
+
+:only-child solo cuando es hijo unico
+
+
+p:nth-child(3) busca un parrafo q sea el tercer hijo
+div
+  div Div 1
+  div Div 2
+  p parrafo 3 este seria el elegido
+  p parrafo 4
+  p parrafo 5
+  p parrafo 6  
+
+/* PSEUDOCLASES type */
+:first-child     :first-of-type
+:last-child      :last-of-type 
+:nth-child()     :nth-of-type()
+:nth-last-child():nth-last-of-type
+
+div
+  div Div 1
+  div Div 2
+  p.parrafo parrafo 3 este seria el elegido
+  p.parrafo parrafo 4
+  p.parrafo parrafo 5
+  p.parrafo parrafo 6  
+  p parrafo 7  
+  p parrafo 8
+ 
+.parrafo:nth-of-type(3) {
+ bg: yellow 
+
+/* selectores agrupados y scoped */
+h1 hola mundo
+p bienvenidos a mi web
+
+
+tip ****los margenes verticales no se suman. solo se tiene en cuenta el mayor
+*** los margenes horizontales se suman
+
+margin auto para centrar solo funciona en elementos display block
+
+border-style: solid dotted; solid arriba y abajo - punteado en izq-der
+border-width: 10px 5px 50px 3px;
+border-color: red green blue yellow
+border-left-color: black
+border-left-width: 10px
+border-left-style: dashed
+border-left: 20px dashed orange
+border-bottom: none
+
+es bueno usar shorthand cuando vamos a usar todos los valores 
+pero si solo vamos a usar un valor en un shorthand es mala paractica
+
+display table
+tip no meter imagenes dentro de display table
+1.- uso para cuando quiero hacer un contenedor a la medida de mi contenido con propiedadees de display block como margin auto ademas de ancho y alto
+2.-y otro uso es para limpiar float 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   

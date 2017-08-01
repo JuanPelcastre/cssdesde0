@@ -1,0 +1,224 @@
+tip recomendacion de la propia google
+1.-poner dos link de hoja de estilos una en el head con los estilos basicos
+de de header y navegacion q son los primeros 
+2.-y otra con lo mas pesado y todo completo hasta el final de la pagina antes del tag body 
+
+a web http://apps.workflower.fi/vocabs/css/en no esta disponible me dice, si hubiera otra similar para aprender la sintaxis te estaria muy agradecido. Saludos.
+
+/* selectores basicos
+  selectores
+  especificidad
+  cascada
+  herencia
+  
+avanzados 
+  box model
+  position
+  flexbox
+*/
+tip es mejor no usar selectores descendientes o de contexto o usar la menor antidad de selectores descendientes, estas obligando al navegador hacer busquedas muy complejas y utiliza mas recursos por lo q no es recomendable
+
+tipos de datos
+  color: hsl(0,100%,50%);
+  transform: rotate(0.5turn); // turn = vuelta
+  transform: left 2s;
+  margin: cal(10px * 2);
+  margin: cal(100% - 100px);
+  
+en css hay funciones
+entiende unidades  
+entiende strings
+  content: 'Hola mundo'
+  
+  
+style link debbuger errores para poscss 
+
+variables en css
+h1 { 
+  --color: red; /* variable local */
+  background: var(--color);
+}
+***************
+h1 { 
+  --color: red; /* variable local */
+  background: var(--color);
+}
+body { color: var(--color);}
+en css hay scope de DOM por lo tanto body no aplica la variable --color
+*********************
+h1 { 
+  color: var(--color);
+}
+body { 
+  --color: red;
+  background: var(--color);
+}
+aqui si aplica la variable en h1 por el scope de DOM ya que body esta mas cerca de la raiz
+
+editor --> visual studio code 
+
+existen dos familias tipograficas basicas 
+  serif       =>  son las q tienen adornos al final o en sus terminaciones los libros la usan mucho
+  sans serif  =>  son las q no tienen adono (sin serifa = sans serif)
+  monospace tienen q ver con el codigo todas las letras tienen el mismo grosor
+  
+  font-family: Arial, sans-serif
+  
+  link de carga de fuente y luego la llamo
+  1.-link google font
+  2.-link del estilo q llama a la fuente
+  
+tip nunca pongas 0 con una unidad 0px, 0s
+
+normalize es la libreria mas conocida para resetear los estilos de los navegadores
+clic derecho guardar como y se guarda como normalize.css y se coloca antes q tus estilos
+
+font-size: 100px
+line-height: 1.5 en realidad vale 115px y tambien se puede poner en pixeles ??? checar esto ???
+
+!important no se deberia de usar   
+
+ya se puede usar html5 sin etiqutas de cierre y esta bien desde html 5
+
+selectores de etiquta no deberias usarlos salvo en los estilos base
+selectores de id no deberias utilizarlos 
+
+un diseñador web piensa en rendimiento por lo q un estilo utilizado a un selector id # q es un elemento unico no es una buena idea porque no lo puedes reutilizar con otros elementos
+
+<ul>
+  <li class=menu-item id=item> Item 1
+  <li class="menu-item lia" id=item> Item 1 /*cuando haya dos elementos en los atributos si   son  nescesarias las comillas */
+  
+/*  Especificidad
+  es un algoritmo de css por el cual se resuelven los conflictos de estilos
+  
+  type   1
+  class  10
+  id     100   tiene una especificidad muy alta por eso no los uses por ninguna clase le gana al un id
+  inline 1000
+  !important siempre gana a todos y si mas adelante quieres cambiar el valor no es posible
+
+  hijos directos
+  ul > span {
+    background: green;
+  }
+  
+  selector hermano(singular) siguiente tambien llamado adyacente
+  h1 + p { bg: lime; }
+  
+  y en html tenemos
+  h1 hola mundo
+  p soy un parrafo => el selector anterior solo aplica aqui
+  p soy otro parrafo
+  
+  selector hermanos(plural) siguientes ~ [alt + +]
+  
+  combinar selectores
+  .title.first sin espacios
+  
+  selectores de atributos
+  usan los [] para indicar el atributo
+  [title][href] { /*selecciona al elemento q tenga esos dos atributos*/
+    color: red;
+    font-size: 2em;
+  }
+  comodin en los atributos 
+  ^ comienza con [alt + {]
+  
+  [title^="Escuela"] caret^
+  [class^="menu-"]
+  [class^="col-"]
+  
+  comodin $ termina en
+  [href$="pdf"]
+  selecciona <a title='Escuela'>
+  *************
+  <a href="/files/manuals/2017.pdf">Descargar manual</a>
+  
+  [href$="pdf"] {
+    display: block
+    bg: url(http://fresnostate.edu/webresources/images128x128/128x128-   pdf.png) left / contain no-repeat;
+    paddingleft: 1.5em;
+    }
+    esta en el video selectores de atributo
+    
+    comodin * contiene
+    <a href="loquesea.docx">Descargalo 
+    [href*='sea']
+        [href*='sea' i] aqui la i significa ignorecase y viene con css nivel 4
+    
+    so n selectores dinamicos, q responden al contexto, a la interaccion del usuario o a algunas propiedades de los elementos.    
+    las seudoclases no necesariamente estan atadas a un elemento
+    
+    2.5 volver a ver Peudoclases #parrafo:target esta interesante
+    minuto 10 video 2.5
+    
+    :root hace referencia a html
+    :empty {
+      display: none;
+    }
+    <p></p> este seria un elemento vacio
+    
+    :not(selector) realmente es una funcion q recive un parametro
+    selecciona cualquier elemento q no cumpla con el selector,
+    se le puede pasar cualquier selector exepto otro :not()
+    
+    5.4 - Alineación de ejes
+    los margenes no colapsan en flexbox
+<div class="container">
+ <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div> 
+  <div class="item">11</div>
+  <div class="item">12</div>
+   </div>
+.container {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background-color: hsl(240,100%,90%);
+  //flex-direction: column;
+  // justify-content: ;
+  
+}
+.item {
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  text-align: center;
+  line-height: 30px;
+  //margin: auto;
+  &:nth-child(even) {
+    background-color: green;
+    color: #fff;
+  }
+}
+.item:nth-child(n+5) {
+  order: 2;
+}
+.item:nth-child(10) {
+  order: 1;
+}
+
+flex-basis: main-size inicial
+flex-grow: factor de crecimiento
+flex-shrink: factor de encogimiento
+flex: grow shrink basis
+   
+        
+    
+  
+  
+  
+  
+  
+  
+
+
